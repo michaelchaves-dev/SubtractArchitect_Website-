@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Systems Library | Subtract Architect Studios</title>
+  <meta name="description" content="The Subtract Architect Studios systems library: 70 repositories across eight system families.">
+  <meta name="theme-color" content="#0c0c0c">
+  <style>
+    :root{--bg:#0c0c0c;--ink:#e8e4dc;--muted:#8b8b83;--lime:#c6f000;--line:#2a2a2a;--panel:#11110f;--max:1180px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Helvetica,Arial,sans-serif;line-height:1.55;background-image:radial-gradient(rgba(255,255,255,.035) .6px,transparent .6px);background-size:3px 3px}
+    a{color:inherit;text-decoration:none} a:hover{color:var(--lime)}
+    .wrap{width:min(var(--max),90vw);margin:auto}
+    .bar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(8,8,8,.94);backdrop-filter:blur(14px)}
+    .barin{width:min(var(--max),94vw);margin:auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+    .mark{display:flex;align-items:center;gap:10px;font-weight:700}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}
+    .nav{display:flex;gap:22px;color:var(--muted)}
+    .hero{padding:100px 0 76px;border-bottom:1px solid var(--line)}
+    .kicker,.idx{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}
+    h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+    h1{font-size:clamp(54px,7vw,98px);line-height:.94;letter-spacing:-.035em;margin:22px 0 26px;max-width:11ch}
+    h1 em{font-style:italic;color:var(--lime)}
+    .lede{max-width:800px;color:#b8b5ae;font-size:18px;line-height:1.7}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:46px}
+    .stat{background:var(--bg);padding:26px}
+    .stat strong{display:block;font-family:Georgia,serif;font-size:42px;font-weight:500;line-height:1;color:var(--lime)}
+    .stat span{display:block;margin-top:10px;color:var(--muted);font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+    .note{padding:20px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}
+    .catalog-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:70px 0 15px}
+    .catalog-nav a{background:var(--bg);padding:16px 18px;display:flex;gap:14px;align-items:center;color:#b7b4ae;font-size:13px}
+    .catalog-nav span{color:var(--lime);font-size:11px;letter-spacing:.12em}
+    .tools{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 10px}
+    .search{flex:1;min-width:220px;background:#10100f;border:1px solid var(--line);color:var(--ink);padding:13px 14px;font:inherit}
+    .filter{background:#10100f;border:1px solid var(--line);color:var(--muted);padding:12px 14px;cursor:pointer;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .filter.active{border-color:var(--lime);color:var(--lime)}
+    .family{padding:80px 0;border-bottom:1px solid var(--line)}
+    .family-head{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:32px}
+    .family h2{font-size:clamp(34px,4.3vw,56px);line-height:1;margin:13px 0 0}
+    .family-count{font-family:Georgia,serif;font-size:52px;line-height:.8;color:var(--lime);text-align:right}
+    .family-count small{display:block;font-family:Inter,Helvetica,sans-serif;font-size:9px;letter-spacing:.16em;color:var(--muted);margin-top:12px}
+    .repo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .repo-card{background:var(--bg);padding:25px;min-height:165px}
+    .repo-card.hidden{display:none}
+    .repo-top{display:flex;align-items:start;justify-content:space-between;gap:18px}
+    .repo-name{font-family:Georgia,serif;font-size:22px;overflow-wrap:anywhere}
+    .repo-card p{color:var(--muted);font-size:14px;margin:17px 0 0}
+    .badge{font-size:9px;letter-spacing:.13em;border:1px solid var(--line);padding:4px 7px;white-space:nowrap;color:var(--muted)}
+    .badge.public{border-color:#465400;color:var(--lime)}
+    .badge.archived{text-decoration:line-through}
+    .empty{display:none;padding:50px 0;color:var(--muted)}
+    .cta{padding:90px 0}
+    .cta-box{border:1px solid var(--line);border-left:3px solid var(--lime);padding:32px;background:var(--panel);display:flex;justify-content:space-between;align-items:center;gap:30px}
+    .cta h2{font-size:clamp(30px,4vw,48px);margin:0;max-width:16ch}
+    .btn{display:inline-flex;align-items:center;background:var(--lime);color:#0c0c0c;padding:13px 18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+    .btn:hover{color:#0c0c0c}
+    footer{border-top:1px solid var(--line);padding:30px 0 46px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    @media(max-width:850px){.nav{display:none}.stats,.catalog-nav,.repo-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cta-box{align-items:flex-start;flex-direction:column}}
+    @media(max-width:520px){.stats{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="bar"><div class="barin">
+    <a class="mark" href="#top"><span class="dot"></span> Subtract Architect Studios</a>
+    <nav class="nav"><a href="#catalog">Families</a><a href="#library">Library</a><a href="#contact">Contact</a></nav>
+  </div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap">
+      <div class="kicker">SYSTEMS LIBRARY · GITHUB PORTFOLIO</div>
+      <h1>One studio. <em>Many problem spaces.</em></h1>
+      <p class="lede">A live portfolio snapshot spanning AI operating systems, memory, model routing, inference economics, cybersecurity, governance, simulations, mathematical R&D, property and field operations, education, public research and experimental systems. The library intentionally includes production work, prototypes, research labs, demos, governance infrastructure and selected archival lineage.</p>
+      <div class="stats">
+        <div class="stat"><strong>70</strong><span>Repositories</span></div>
+        <div class="stat"><strong>8</strong><span>System families</span></div>
+        <div class="stat"><strong>32</strong><span>Public repositories</span></div>
+        <div class="stat"><strong>38</strong><span>Private / internal</span></div>
+      </div>
+    </div></section>
+    <div class="note"><div class="wrap">Verified against the connected GitHub account on October 1, 2026. Private repositories are listed to show portfolio breadth but are not linked or presented as publicly reviewable. Archived work is explicitly marked. Machine-readable catalog: library.json.</div></div>
+    <div class="wrap">
+      <nav class="catalog-nav" id="catalog"><a href="#core-os-memory-agent-infrastructure"><span>14</span>Core OS, Memory & Agent Infrastructure</a>
+<a href="#inference-optimization-ai-economics"><span>09</span>Inference Optimization & AI Economics</a>
+<a href="#security-governance-reliability"><span>09</span>Security, Governance & Reliability</a>
+<a href="#qst-simulation-r-d"><span>11</span>QST, Simulation & R&D</a>
+<a href="#applied-business-operations"><span>08</span>Applied Business & Operations</a>
+<a href="#education-training-public-research"><span>08</span>Education, Training & Public Research</a>
+<a href="#data-intelligence-exploration"><span>02</span>Data, Intelligence & Exploration</a>
+<a href="#studio-portfolio-coordination"><span>09</span>Studio, Portfolio & Coordination</a></nav>
+      <div class="tools" id="library">
+        <input class="search" id="repoSearch" type="search" placeholder="Search the library" aria-label="Search repositories">
+        <button class="filter active" data-filter="all" type="button">All</button>
+        <button class="filter" data-filter="public" type="button">Public</button>
+        <button class="filter" data-filter="private" type="button">Private</button>
+      </div>
+      <section class="family" id="core-os-memory-agent-infrastructure">
+    <div class="family-head">
+      <div><div class="idx">[01] / REPOSITORY FAMILY</div><h2>Core OS, Memory & Agent Infrastructure</h2></div>
+      <div class="family-count">14<small>REPOS</small></div>
+    </div>
+    <div class="repo-grid"><article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/bellaOS" target="_blank" rel="noopener">bellaOS <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Constitutional AI operating-system root: governance, orchestration and reusable system architecture.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/bellaOS_Pro" target="_blank" rel="noopener">bellaOS_Pro <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Production-oriented bellaOS surface and deployment lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">bellaOS-Agent-Control-Plane</div><span class="badge private">PRIVATE</span></div>
+      <p>Agent orchestration and control-plane layer with governance, memory and skills.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">bellaOS-Commons</div><span class="badge private">PRIVATE</span></div>
+      <p>Permissioned coordination bus separating messages from command authority.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/bellaos-brain" target="_blank" rel="noopener">bellaos-brain <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Public pointer and lineage surface for the Sentinel/bellaOS reasoning stack.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Operator" target="_blank" rel="noopener">Operator <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Human-to-agent control plane with authority tiers, adapters and auditable execution.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/CNS-Memory-Core" target="_blank" rel="noopener">CNS-Memory-Core <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Persistent memory service for agents and applications with API-backed storage.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/ZeroFold" target="_blank" rel="noopener">ZeroFold <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Memory conservation, deduplication, compact state and provenance-aware persistence.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/bella_IR" target="_blank" rel="noopener">bella_IR <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Compact semantic intermediate representation for instructions, state and agent communication.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Zali_OS</div><span class="badge private">PRIVATE</span></div>
+      <p>Companion operating-system lineage for education and guided learning systems.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/zali_OS-RAG" target="_blank" rel="noopener">zali_OS-RAG <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Retrieval and self-learning architecture for the Zali ecosystem.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/twin-demo-week1" target="_blank" rel="noopener">twin-demo-week1 <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Layered small-model / cache / consult routing demonstration.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Sparks_Smart_list</div><span class="badge private">PRIVATE</span></div>
+      <p>Mobile-first personal operator dashboard with reminders, agent assistance and privacy controls.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Sparks_Commons</div><span class="badge private">PRIVATE</span></div>
+      <p>Sanitized coordination bus for Sparks workflows across a privacy boundary.</p>
+    </article></div>
+  </section>
+<section class="family" id="inference-optimization-ai-economics">
+    <div class="family-head">
+      <div><div class="idx">[02] / REPOSITORY FAMILY</div><h2>Inference Optimization & AI Economics</h2></div>
+      <div class="family-count">09<small>REPOS</small></div>
+    </div>
+    <div class="repo-grid"><article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">subtractoken-router</div><span class="badge private">PRIVATE</span></div>
+      <p>Model routing, context optimization, PII preprocessing, budgets, fallback and cost receipts.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">SubtracToken_Command_Center</div><span class="badge private">PRIVATE</span></div>
+      <p>Operator and market-analysis command-center lineage for SubtracToken.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">AIM</div><span class="badge private">PRIVATE</span></div>
+      <p>Flagship AI Inference Market system for model economics, routing and market intelligence.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">AIM-MASTER</div><span class="badge private">PRIVATE</span></div>
+      <p>Compute-unit economics, governance, ledger and verification research lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">aim-site</div><span class="badge private">PRIVATE</span></div>
+      <p>Earlier web repository in the AI Inference Market lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Aiinference-Market-CU-Monetary-Engine</div><span class="badge private">PRIVATE</span></div>
+      <p>Compute-unit monetary and accounting engine research.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Aiinference-DAR-DeFi-Dashboard</div><span class="badge private">PRIVATE</span></div>
+      <p>DeFi analysis terminal combining LLM routing, data services, authentication and persistence.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/tokenease-demo" target="_blank" rel="noopener">tokenease-demo <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Public inference-cost and savings dashboard demonstration.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">ai-deployment-simulator</div><span class="badge private">PRIVATE</span></div>
+      <p>Deployment simulator for comparing AI routing, cost and architecture tradeoffs.</p>
+    </article></div>
+  </section>
+<section class="family" id="security-governance-reliability">
+    <div class="family-head">
+      <div><div class="idx">[03] / REPOSITORY FAMILY</div><h2>Security, Governance & Reliability</h2></div>
+      <div class="family-count">09<small>REPOS</small></div>
+    </div>
+    <div class="repo-grid"><article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Bruto_Security-Gate" target="_blank" rel="noopener">Bruto_Security-Gate <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Proactive interception, quarantine and human-review gate for risky links, files and attachments.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">bruto_security_protocol</div><span class="badge private">PRIVATE</span></div>
+      <p>Trust-boundary, least-privilege, crypto-agility and rollback assurance architecture.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Sentinel_Security_Protocol</div><span class="badge private">PRIVATE</span></div>
+      <p>Integrity layer for claim-state tracking, failure-pattern subtraction and response routing.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Sentinel_Subtract_Architect_Studios</div><span class="badge private">PRIVATE</span></div>
+      <p>Canonical Sentinel doctrine, RAG corpus, architecture and method lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/vaultcheck" target="_blank" rel="noopener">vaultcheck <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Focused breach-detection security utility.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/QST-Sandbox_Security_Protocol" target="_blank" rel="noopener">QST-Sandbox_Security_Protocol <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Experimental sandbox for QST-inspired security controls.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Cyber_Range_Sim" target="_blank" rel="noopener">Cyber_Range_Sim <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Defensive cyber-range simulator and training lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Frontier_Faults" target="_blank" rel="noopener">Frontier_Faults <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Evidence registry for frontier-model failures, mitigations and regression patterns.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">VHS_CORE</div><span class="badge archived">ARCHIVED</span></div>
+      <p>Archived Virtual Hyper-lattice Security architecture and defensive-gate predecessor.</p>
+    </article></div>
+  </section>
+<section class="family" id="qst-simulation-r-d">
+    <div class="family-head">
+      <div><div class="idx">[04] / REPOSITORY FAMILY</div><h2>QST, Simulation & R&D</h2></div>
+      <div class="family-count">11<small>REPOS</small></div>
+    </div>
+    <div class="repo-grid"><article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Quantum-Subtraction-Theory</div><span class="badge private">PRIVATE</span></div>
+      <p>Core Quantum Subtraction Theory research, protocols, benchmarks and implementation standards.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">QST-lab-works</div><span class="badge private">PRIVATE</span></div>
+      <p>Testing ground for QST and subtractive-computation experiments.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Quantum-Subtraction-Ntouch-Sim</div><span class="badge private">PRIVATE</span></div>
+      <p>High-performance N-body simulation with subtractive pruning telemetry.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Quantum-Subtraction-NBody-Lab-</div><span class="badge private">PRIVATE</span></div>
+      <p>Interactive N-body Quantum Subtraction laboratory.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">quantum-ghost-subtraction-cipher</div><span class="badge private">PRIVATE</span></div>
+      <p>Quantum Ghost / subtraction research archive and cipher lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/The-Ternary-Step-0-Field-Simulator" target="_blank" rel="noopener">The-Ternary-Step-0-Field-Simulator <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Experimental ternary {-1, 0, +1}, Step-0 and field-simulation research.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Earths_Spiral" target="_blank" rel="noopener">Earths_Spiral <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Interactive orbital / galactic trajectory simulation and education project.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Subtract_R-D_Labs</div><span class="badge private">PRIVATE</span></div>
+      <p>Research home for mathematics, exact-search and experimental science tracks.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Proving_Ground_Testing</div><span class="badge private">PRIVATE</span></div>
+      <p>Large proving-ground corpus spanning routers, prototypes, doctrine and test artifacts.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Proving_Grounds_Code_Review" target="_blank" rel="noopener">Proving_Grounds_Code_Review <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Proof-before-promotion code review and idea-ledger workflow.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">One_Percent_Better</div><span class="badge private">PRIVATE</span></div>
+      <p>Bounded continuous-improvement ledger for evidence-backed methodology refinement.</p>
+    </article></div>
+  </section>
+<section class="family" id="applied-business-operations">
+    <div class="family-head">
+      <div><div class="idx">[05] / REPOSITORY FAMILY</div><h2>Applied Business & Operations</h2></div>
+      <div class="family-count">08<small>REPOS</small></div>
+    </div>
+    <div class="repo-grid"><article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/rent-portfolio-analyzer" target="_blank" rel="noopener">rent-portfolio-analyzer <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Residential portfolio analysis product focused on rent-roll and revenue-leakage review.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/New_England_Real-Estate_Compliance_Law" target="_blank" rel="noopener">New_England_Real-Estate_Compliance_Law <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Multi-state New England landlord-tenant compliance knowledge repository.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Marci-Ai-</div><span class="badge private">PRIVATE</span></div>
+      <p>Administrative, receptionist, supervisor and property-operations assistant lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">-GC-General-Contractor-app</div><span class="badge private">PRIVATE</span></div>
+      <p>General-contractor project operations, reporting and field-work application lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/MOM-Mind-Over-Matter" target="_blank" rel="noopener">MOM-Mind-Over-Matter <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Human-centered habit-awareness and behavior-change application concept.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/road-trip-atlas" target="_blank" rel="noopener">road-trip-atlas <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Small-town travel, trip-planning and local discovery application.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Horus</div><span class="badge private">PRIVATE</span></div>
+      <p>Safety and prevention intelligence logic with training and group-state analysis.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Horus_Eye</div><span class="badge private">PRIVATE</span></div>
+      <p>Camera/operator visualization and labeling layer paired with Horus.</p>
+    </article></div>
+  </section>
+<section class="family" id="education-training-public-research">
+    <div class="family-head">
+      <div><div class="idx">[06] / REPOSITORY FAMILY</div><h2>Education, Training & Public Research</h2></div>
+      <div class="family-count">08<small>REPOS</small></div>
+    </div>
+    <div class="repo-grid"><article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">NexGen-Future-Developers</div><span class="badge private">PRIVATE</span></div>
+      <p>Project-based youth technology, AI, robotics and systems-learning initiative.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/TechWhenYoureReady_Master" target="_blank" rel="noopener">TechWhenYoureReady_Master <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Multilingual technology-learning program and site/application source.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Ai-Without-the-Freakout" target="_blank" rel="noopener">Ai-Without-the-Freakout <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Evidence-oriented AI and science education / publication program.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Ask_Uncle_Mike" target="_blank" rel="noopener">Ask_Uncle_Mike <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Plain-language explain-and-show learning series across technology and practical life topics.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Farmers-Ai-manac-" target="_blank" rel="noopener">Farmers-Ai-manac- <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Future-facing digital almanac and educational data concept.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Hope_Ai" target="_blank" rel="noopener">Hope_Ai <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Evidence-tagged medical and science innovation research ledger; not medical advice.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">granite-state-pulse</div><span class="badge private">PRIVATE</span></div>
+      <p>AI newsletter and local/small-business publication system.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">E-paperboy</div><span class="badge private">PRIVATE</span></div>
+      <p>Digital publication and delivery prototype lineage.</p>
+    </article></div>
+  </section>
+<section class="family" id="data-intelligence-exploration">
+    <div class="family-head">
+      <div><div class="idx">[07] / REPOSITORY FAMILY</div><h2>Data, Intelligence & Exploration</h2></div>
+      <div class="family-count">02<small>REPOS</small></div>
+    </div>
+    <div class="repo-grid"><article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">ATLAS_uap-app</div><span class="badge private">PRIVATE</span></div>
+      <p>Public-camera ingestion, metadata and fusion-ready data architecture in the ATLAS lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Atlas-SkyMap-UAP-Directory-" target="_blank" rel="noopener">Atlas-SkyMap-UAP-Directory- <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Public ATLAS SkyMap / UAP register preview and exploration surface.</p>
+    </article></div>
+  </section>
+<section class="family" id="studio-portfolio-coordination">
+    <div class="family-head">
+      <div><div class="idx">[08] / REPOSITORY FAMILY</div><h2>Studio, Portfolio & Coordination</h2></div>
+      <div class="family-count">09<small>REPOS</small></div>
+    </div>
+    <div class="repo-grid"><article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">subtraction-architect-mvp-inventory</div><span class="badge private">PRIVATE</span></div>
+      <p>Private master inventory for prototypes, MVPs, proofs of work and source intake.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Subtract_Architect_Studios_IP</div><span class="badge private">PRIVATE</span></div>
+      <p>Studio intellectual-property catalog and indexing repository.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Subtract_Architect_Library" target="_blank" rel="noopener">Subtract_Architect_Library <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Public directory for methods, dashboards, systems and software concepts.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Subtract-Architect-Studios_Founder" target="_blank" rel="noopener">Subtract-Architect-Studios_Founder <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Founder and company portfolio narrative spanning consulting, research and education.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/SubtractArchitect_Website-" target="_blank" rel="noopener">SubtractArchitect_Website- <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Public website source repository for Subtract Architect Studios.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">Advo_Dev</div><span class="badge private">PRIVATE</span></div>
+      <p>Advocacy-oriented development and prototype lineage.</p>
+    </article>
+<article class="repo-card" data-visibility="public">
+      <div class="repo-top"><div class="repo-name"><a href="https://github.com/michaelchaves-dev/Advo_Dev_Commons" target="_blank" rel="noopener">Advo_Dev_Commons <span aria-hidden="true">↗</span></a></div><span class="badge public">PUBLIC</span></div>
+      <p>Coordination / Commons companion repository for Advo Dev.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">bella-social-manager-v0.1</div><span class="badge private">PRIVATE</span></div>
+      <p>Owner-approval social media manager foundation with allowlists and publishing gates.</p>
+    </article>
+<article class="repo-card" data-visibility="private">
+      <div class="repo-top"><div class="repo-name">aether_aura</div><span class="badge private">PRIVATE</span></div>
+      <p>Private experimental project retained in the studio portfolio; deeper public classification pending.</p>
+    </article></div>
+  </section>
+      <p class="empty" id="emptyState">No repositories match that search or filter.</p>
+      <section class="cta" id="contact"><div class="cta-box">
+        <div>
+          <div class="idx">From library to client system</div>
+          <h2>We reuse the right architecture instead of rebuilding everything from zero.</h2>
+        </div>
+        <a class="btn" href="mailto:founder@SubtractArchitect.com?subject=Project%20Inquiry">Start a project</a>
+      </div></section>
+    </div>
+  </main>
+  <footer><div class="wrap foot"><span>Subtract Architect Studios · Concord, New Hampshire</span><span>Intelligence by subtraction</span></div></footer>
+  <script>
+    const search = document.getElementById("repoSearch");
+    const filters = [...document.querySelectorAll(".filter")];
+    const cards = [...document.querySelectorAll(".repo-card")];
+    const sections = [...document.querySelectorAll(".family")];
+    const empty = document.getElementById("emptyState");
+    let activeFilter = "all";
+    function applyFilters() {
+      const q = search.value.trim().toLowerCase();
+      let visibleTotal = 0;
+      cards.forEach((card) => {
+        const show = (!q || card.innerText.toLowerCase().includes(q)) && (activeFilter === "all" || card.dataset.visibility === activeFilter);
+        card.classList.toggle("hidden", !show);
+        if (show) visibleTotal += 1;
+      });
+      sections.forEach((section) => {
+        const visible = [...section.querySelectorAll(".repo-card")].some((card) => !card.classList.contains("hidden"));
+        section.style.display = visible ? "" : "none";
+      });
+      empty.style.display = visibleTotal ? "none" : "block";
+    }
+    search.addEventListener("input", applyFilters);
+    filters.forEach((button) => button.addEventListener("click", () => {
+      filters.forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+      activeFilter = button.dataset.filter;
+      applyFilters();
+    }));
+  </script>
+</body>
+</html>

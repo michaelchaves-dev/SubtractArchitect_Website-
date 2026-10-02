@@ -1,0 +1,505 @@
+{
+  "studio": {
+    "name": "Subtract Architect Studios",
+    "place": "Concord, New Hampshire",
+    "line": "Intelligence by subtraction",
+    "verifiedOn": "October 1, 2026",
+    "github": "michaelchaves-dev",
+    "contact": "founder@SubtractArchitect.com"
+  },
+  "verifiedOn": "October 1, 2026",
+  "stats": {
+    "repositories": 70,
+    "families": 8,
+    "public": 32,
+    "private": 38
+  },
+  "note": "Private repositories are listed for portfolio breadth and must not be linked or treated as publicly reviewable.",
+  "families": [
+    {
+      "id": "core-os-memory-agent-infrastructure",
+      "index": "01",
+      "title": "Core OS, Memory & Agent Infrastructure",
+      "repos": [
+        {
+          "name": "bellaOS",
+          "visibility": "public",
+          "summary": "Constitutional AI operating-system root: governance, orchestration and reusable system architecture.",
+          "url": "https://github.com/michaelchaves-dev/bellaOS"
+        },
+        {
+          "name": "bellaOS_Pro",
+          "visibility": "public",
+          "summary": "Production-oriented bellaOS surface and deployment lineage.",
+          "url": "https://github.com/michaelchaves-dev/bellaOS_Pro"
+        },
+        {
+          "name": "bellaOS-Agent-Control-Plane",
+          "visibility": "private",
+          "summary": "Agent orchestration and control-plane layer with governance, memory and skills.",
+          "url": null
+        },
+        {
+          "name": "bellaOS-Commons",
+          "visibility": "private",
+          "summary": "Permissioned coordination bus separating messages from command authority.",
+          "url": null
+        },
+        {
+          "name": "bellaos-brain",
+          "visibility": "public",
+          "summary": "Public pointer and lineage surface for the Sentinel/bellaOS reasoning stack.",
+          "url": "https://github.com/michaelchaves-dev/bellaos-brain"
+        },
+        {
+          "name": "Operator",
+          "visibility": "public",
+          "summary": "Human-to-agent control plane with authority tiers, adapters and auditable execution.",
+          "url": "https://github.com/michaelchaves-dev/Operator"
+        },
+        {
+          "name": "CNS-Memory-Core",
+          "visibility": "public",
+          "summary": "Persistent memory service for agents and applications with API-backed storage.",
+          "url": "https://github.com/michaelchaves-dev/CNS-Memory-Core"
+        },
+        {
+          "name": "ZeroFold",
+          "visibility": "public",
+          "summary": "Memory conservation, deduplication, compact state and provenance-aware persistence.",
+          "url": "https://github.com/michaelchaves-dev/ZeroFold"
+        },
+        {
+          "name": "bella_IR",
+          "visibility": "public",
+          "summary": "Compact semantic intermediate representation for instructions, state and agent communication.",
+          "url": "https://github.com/michaelchaves-dev/bella_IR"
+        },
+        {
+          "name": "Zali_OS",
+          "visibility": "private",
+          "summary": "Companion operating-system lineage for education and guided learning systems.",
+          "url": null
+        },
+        {
+          "name": "zali_OS-RAG",
+          "visibility": "public",
+          "summary": "Retrieval and self-learning architecture for the Zali ecosystem.",
+          "url": "https://github.com/michaelchaves-dev/zali_OS-RAG"
+        },
+        {
+          "name": "twin-demo-week1",
+          "visibility": "public",
+          "summary": "Layered small-model / cache / consult routing demonstration.",
+          "url": "https://github.com/michaelchaves-dev/twin-demo-week1"
+        },
+        {
+          "name": "Sparks_Smart_list",
+          "visibility": "private",
+          "summary": "Mobile-first personal operator dashboard with reminders, agent assistance and privacy controls.",
+          "url": null
+        },
+        {
+          "name": "Sparks_Commons",
+          "visibility": "private",
+          "summary": "Sanitized coordination bus for Sparks workflows across a privacy boundary.",
+          "url": null
+        }
+      ],
+      "count": 14
+    },
+    {
+      "id": "inference-optimization-ai-economics",
+      "index": "02",
+      "title": "Inference Optimization & AI Economics",
+      "repos": [
+        {
+          "name": "subtractoken-router",
+          "visibility": "private",
+          "summary": "Model routing, context optimization, PII preprocessing, budgets, fallback and cost receipts.",
+          "url": null
+        },
+        {
+          "name": "SubtracToken_Command_Center",
+          "visibility": "private",
+          "summary": "Operator and market-analysis command-center lineage for SubtracToken.",
+          "url": null
+        },
+        {
+          "name": "AIM",
+          "visibility": "private",
+          "summary": "Flagship AI Inference Market system for model economics, routing and market intelligence.",
+          "url": null
+        },
+        {
+          "name": "AIM-MASTER",
+          "visibility": "private",
+          "summary": "Compute-unit economics, governance, ledger and verification research lineage.",
+          "url": null
+        },
+        {
+          "name": "aim-site",
+          "visibility": "private",
+          "summary": "Earlier web repository in the AI Inference Market lineage.",
+          "url": null
+        },
+        {
+          "name": "Aiinference-Market-CU-Monetary-Engine",
+          "visibility": "private",
+          "summary": "Compute-unit monetary and accounting engine research.",
+          "url": null
+        },
+        {
+          "name": "Aiinference-DAR-DeFi-Dashboard",
+          "visibility": "private",
+          "summary": "DeFi analysis terminal combining LLM routing, data services, authentication and persistence.",
+          "url": null
+        },
+        {
+          "name": "tokenease-demo",
+          "visibility": "public",
+          "summary": "Public inference-cost and savings dashboard demonstration.",
+          "url": "https://github.com/michaelchaves-dev/tokenease-demo"
+        },
+        {
+          "name": "ai-deployment-simulator",
+          "visibility": "private",
+          "summary": "Deployment simulator for comparing AI routing, cost and architecture tradeoffs.",
+          "url": null
+        }
+      ],
+      "count": 9
+    },
+    {
+      "id": "security-governance-reliability",
+      "index": "03",
+      "title": "Security, Governance & Reliability",
+      "repos": [
+        {
+          "name": "Bruto_Security-Gate",
+          "visibility": "public",
+          "summary": "Proactive interception, quarantine and human-review gate for risky links, files and attachments.",
+          "url": "https://github.com/michaelchaves-dev/Bruto_Security-Gate"
+        },
+        {
+          "name": "bruto_security_protocol",
+          "visibility": "private",
+          "summary": "Trust-boundary, least-privilege, crypto-agility and rollback assurance architecture.",
+          "url": null
+        },
+        {
+          "name": "Sentinel_Security_Protocol",
+          "visibility": "private",
+          "summary": "Integrity layer for claim-state tracking, failure-pattern subtraction and response routing.",
+          "url": null
+        },
+        {
+          "name": "Sentinel_Subtract_Architect_Studios",
+          "visibility": "private",
+          "summary": "Canonical Sentinel doctrine, RAG corpus, architecture and method lineage.",
+          "url": null
+        },
+        {
+          "name": "vaultcheck",
+          "visibility": "public",
+          "summary": "Focused breach-detection security utility.",
+          "url": "https://github.com/michaelchaves-dev/vaultcheck"
+        },
+        {
+          "name": "QST-Sandbox_Security_Protocol",
+          "visibility": "public",
+          "summary": "Experimental sandbox for QST-inspired security controls.",
+          "url": "https://github.com/michaelchaves-dev/QST-Sandbox_Security_Protocol"
+        },
+        {
+          "name": "Cyber_Range_Sim",
+          "visibility": "public",
+          "summary": "Defensive cyber-range simulator and training lineage.",
+          "url": "https://github.com/michaelchaves-dev/Cyber_Range_Sim"
+        },
+        {
+          "name": "Frontier_Faults",
+          "visibility": "public",
+          "summary": "Evidence registry for frontier-model failures, mitigations and regression patterns.",
+          "url": "https://github.com/michaelchaves-dev/Frontier_Faults"
+        },
+        {
+          "name": "VHS_CORE",
+          "visibility": "private",
+          "archived": true,
+          "summary": "Archived Virtual Hyper-lattice Security architecture and defensive-gate predecessor.",
+          "url": null
+        }
+      ],
+      "count": 9
+    },
+    {
+      "id": "qst-simulation-r-d",
+      "index": "04",
+      "title": "QST, Simulation & R&D",
+      "repos": [
+        {
+          "name": "Quantum-Subtraction-Theory",
+          "visibility": "private",
+          "summary": "Core Quantum Subtraction Theory research, protocols, benchmarks and implementation standards.",
+          "url": null
+        },
+        {
+          "name": "QST-lab-works",
+          "visibility": "private",
+          "summary": "Testing ground for QST and subtractive-computation experiments.",
+          "url": null
+        },
+        {
+          "name": "Quantum-Subtraction-Ntouch-Sim",
+          "visibility": "private",
+          "summary": "High-performance N-body simulation with subtractive pruning telemetry.",
+          "url": null
+        },
+        {
+          "name": "Quantum-Subtraction-NBody-Lab-",
+          "visibility": "private",
+          "summary": "Interactive N-body Quantum Subtraction laboratory.",
+          "url": null
+        },
+        {
+          "name": "quantum-ghost-subtraction-cipher",
+          "visibility": "private",
+          "summary": "Quantum Ghost / subtraction research archive and cipher lineage.",
+          "url": null
+        },
+        {
+          "name": "The-Ternary-Step-0-Field-Simulator",
+          "visibility": "public",
+          "summary": "Experimental ternary {-1, 0, +1}, Step-0 and field-simulation research.",
+          "url": "https://github.com/michaelchaves-dev/The-Ternary-Step-0-Field-Simulator"
+        },
+        {
+          "name": "Earths_Spiral",
+          "visibility": "public",
+          "summary": "Interactive orbital / galactic trajectory simulation and education project.",
+          "url": "https://github.com/michaelchaves-dev/Earths_Spiral"
+        },
+        {
+          "name": "Subtract_R-D_Labs",
+          "visibility": "private",
+          "summary": "Research home for mathematics, exact-search and experimental science tracks.",
+          "url": null
+        },
+        {
+          "name": "Proving_Ground_Testing",
+          "visibility": "private",
+          "summary": "Large proving-ground corpus spanning routers, prototypes, doctrine and test artifacts.",
+          "url": null
+        },
+        {
+          "name": "Proving_Grounds_Code_Review",
+          "visibility": "public",
+          "summary": "Proof-before-promotion code review and idea-ledger workflow.",
+          "url": "https://github.com/michaelchaves-dev/Proving_Grounds_Code_Review"
+        },
+        {
+          "name": "One_Percent_Better",
+          "visibility": "private",
+          "summary": "Bounded continuous-improvement ledger for evidence-backed methodology refinement.",
+          "url": null
+        }
+      ],
+      "count": 11
+    },
+    {
+      "id": "applied-business-operations",
+      "index": "05",
+      "title": "Applied Business & Operations",
+      "repos": [
+        {
+          "name": "rent-portfolio-analyzer",
+          "visibility": "public",
+          "summary": "Residential portfolio analysis product focused on rent-roll and revenue-leakage review.",
+          "url": "https://github.com/michaelchaves-dev/rent-portfolio-analyzer"
+        },
+        {
+          "name": "New_England_Real-Estate_Compliance_Law",
+          "visibility": "public",
+          "summary": "Multi-state New England landlord-tenant compliance knowledge repository.",
+          "url": "https://github.com/michaelchaves-dev/New_England_Real-Estate_Compliance_Law"
+        },
+        {
+          "name": "Marci-Ai-",
+          "visibility": "private",
+          "summary": "Administrative, receptionist, supervisor and property-operations assistant lineage.",
+          "url": null
+        },
+        {
+          "name": "-GC-General-Contractor-app",
+          "visibility": "private",
+          "summary": "General-contractor project operations, reporting and field-work application lineage.",
+          "url": null
+        },
+        {
+          "name": "MOM-Mind-Over-Matter",
+          "visibility": "public",
+          "summary": "Human-centered habit-awareness and behavior-change application concept.",
+          "url": "https://github.com/michaelchaves-dev/MOM-Mind-Over-Matter"
+        },
+        {
+          "name": "road-trip-atlas",
+          "visibility": "public",
+          "summary": "Small-town travel, trip-planning and local discovery application.",
+          "url": "https://github.com/michaelchaves-dev/road-trip-atlas"
+        },
+        {
+          "name": "Horus",
+          "visibility": "private",
+          "summary": "Safety and prevention intelligence logic with training and group-state analysis.",
+          "url": null
+        },
+        {
+          "name": "Horus_Eye",
+          "visibility": "private",
+          "summary": "Camera/operator visualization and labeling layer paired with Horus.",
+          "url": null
+        }
+      ],
+      "count": 8
+    },
+    {
+      "id": "education-training-public-research",
+      "index": "06",
+      "title": "Education, Training & Public Research",
+      "repos": [
+        {
+          "name": "NexGen-Future-Developers",
+          "visibility": "private",
+          "summary": "Project-based youth technology, AI, robotics and systems-learning initiative.",
+          "url": null
+        },
+        {
+          "name": "TechWhenYoureReady_Master",
+          "visibility": "public",
+          "summary": "Multilingual technology-learning program and site/application source.",
+          "url": "https://github.com/michaelchaves-dev/TechWhenYoureReady_Master"
+        },
+        {
+          "name": "Ai-Without-the-Freakout",
+          "visibility": "public",
+          "summary": "Evidence-oriented AI and science education / publication program.",
+          "url": "https://github.com/michaelchaves-dev/Ai-Without-the-Freakout"
+        },
+        {
+          "name": "Ask_Uncle_Mike",
+          "visibility": "public",
+          "summary": "Plain-language explain-and-show learning series across technology and practical life topics.",
+          "url": "https://github.com/michaelchaves-dev/Ask_Uncle_Mike"
+        },
+        {
+          "name": "Farmers-Ai-manac-",
+          "visibility": "public",
+          "summary": "Future-facing digital almanac and educational data concept.",
+          "url": "https://github.com/michaelchaves-dev/Farmers-Ai-manac-"
+        },
+        {
+          "name": "Hope_Ai",
+          "visibility": "public",
+          "summary": "Evidence-tagged medical and science innovation research ledger; not medical advice.",
+          "url": "https://github.com/michaelchaves-dev/Hope_Ai"
+        },
+        {
+          "name": "granite-state-pulse",
+          "visibility": "private",
+          "summary": "AI newsletter and local/small-business publication system.",
+          "url": null
+        },
+        {
+          "name": "E-paperboy",
+          "visibility": "private",
+          "summary": "Digital publication and delivery prototype lineage.",
+          "url": null
+        }
+      ],
+      "count": 8
+    },
+    {
+      "id": "data-intelligence-exploration",
+      "index": "07",
+      "title": "Data, Intelligence & Exploration",
+      "repos": [
+        {
+          "name": "ATLAS_uap-app",
+          "visibility": "private",
+          "summary": "Public-camera ingestion, metadata and fusion-ready data architecture in the ATLAS lineage.",
+          "url": null
+        },
+        {
+          "name": "Atlas-SkyMap-UAP-Directory-",
+          "visibility": "public",
+          "summary": "Public ATLAS SkyMap / UAP register preview and exploration surface.",
+          "url": "https://github.com/michaelchaves-dev/Atlas-SkyMap-UAP-Directory-"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "id": "studio-portfolio-coordination",
+      "index": "08",
+      "title": "Studio, Portfolio & Coordination",
+      "repos": [
+        {
+          "name": "subtraction-architect-mvp-inventory",
+          "visibility": "private",
+          "summary": "Private master inventory for prototypes, MVPs, proofs of work and source intake.",
+          "url": null
+        },
+        {
+          "name": "Subtract_Architect_Studios_IP",
+          "visibility": "private",
+          "summary": "Studio intellectual-property catalog and indexing repository.",
+          "url": null
+        },
+        {
+          "name": "Subtract_Architect_Library",
+          "visibility": "public",
+          "summary": "Public directory for methods, dashboards, systems and software concepts.",
+          "url": "https://github.com/michaelchaves-dev/Subtract_Architect_Library"
+        },
+        {
+          "name": "Subtract-Architect-Studios_Founder",
+          "visibility": "public",
+          "summary": "Founder and company portfolio narrative spanning consulting, research and education.",
+          "url": "https://github.com/michaelchaves-dev/Subtract-Architect-Studios_Founder"
+        },
+        {
+          "name": "SubtractArchitect_Website-",
+          "visibility": "public",
+          "summary": "Public website source repository for Subtract Architect Studios.",
+          "url": "https://github.com/michaelchaves-dev/SubtractArchitect_Website-"
+        },
+        {
+          "name": "Advo_Dev",
+          "visibility": "private",
+          "summary": "Advocacy-oriented development and prototype lineage.",
+          "url": null
+        },
+        {
+          "name": "Advo_Dev_Commons",
+          "visibility": "public",
+          "summary": "Coordination / Commons companion repository for Advo Dev.",
+          "url": "https://github.com/michaelchaves-dev/Advo_Dev_Commons"
+        },
+        {
+          "name": "bella-social-manager-v0.1",
+          "visibility": "private",
+          "summary": "Owner-approval social media manager foundation with allowlists and publishing gates.",
+          "url": null
+        },
+        {
+          "name": "aether_aura",
+          "visibility": "private",
+          "summary": "Private experimental project retained in the studio portfolio; deeper public classification pending.",
+          "url": null
+        }
+      ],
+      "count": 9
+    }
+  ]
+}
