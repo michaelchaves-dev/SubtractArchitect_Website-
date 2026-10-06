@@ -20,3 +20,8 @@ This repository is the source Cursor should open. Do not look for a separate mas
 - Contact: founder@SubtractArchitect.com
 
 The library includes production work, prototypes, research labs, demos, governance infrastructure, and selected archival lineage (VHS_CORE is archived).
+
+<!-- SAS-IP-FOOTER-v1 -->
+---
+**Subtract Architect Studios™**  
+Copyright © 2026 Michael F. Chaves. All rights reserved in original Subtract Architect Studios materials except as expressly licensed. See [IP_NOTICE.md](./IP_NOTICE.md). Existing open-source and third-party licenses remain controlling for materials they cover.
