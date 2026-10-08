@@ -57,14 +57,23 @@
     .btn:hover{color:#0c0c0c}
     footer{border-top:1px solid var(--line);padding:30px 0 46px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
     .foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
-    @media(max-width:850px){.nav{display:none}.stats,.catalog-nav,.repo-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cta-box{align-items:flex-start;flex-direction:column}}
+
+    .seal{width:36px;height:36px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 1px rgba(198,240,0,.35)}
+    .nav a[href*="github"]{color:var(--lime)}
+    .foot{align-items:center}
+    .member{display:flex;align-items:center;gap:14px;text-transform:none;letter-spacing:0;max-width:460px}
+    .member img{width:78px;height:78px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 1px rgba(198,240,0,.35)}
+    .member small,.foot small{display:block;margin-top:6px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .foot a{color:var(--ink)}
+    @media(max-width:850px){.nav{display:flex;gap:14px}.nav a:not([href="#contact"]):not([href*="github"]){display:none}.stats,.catalog-nav,.repo-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cta-box{align-items:flex-start;flex-direction:column}}
     @media(max-width:520px){.stats{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <header class="bar"><div class="barin">
     <a class="mark" href="#top"><span class="dot"></span> Subtract Architect Studios</a>
-    <nav class="nav"><a href="#catalog">Families</a><a href="#library">Library</a><a href="#contact">Contact</a></nav>
+    <a href="https://joaoslist.com" target="_blank" rel="noopener noreferrer" title="João's List official member"><img class="seal" src="media/joaos-list-official-member.jpg" alt="João's List official member, Portuguese Business Network" width="36" height="36"></a>
+    <nav class="nav"><a href="#catalog">Families</a><a href="#library">Library</a><a href="https://github.com/michaelchaves-dev" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#contact">Contact</a></nav>
   </div></header>
   <main id="top">
     <section class="hero"><div class="wrap">
@@ -428,11 +437,18 @@
           <div class="idx">From library to client system</div>
           <h2>We reuse the right architecture instead of rebuilding everything from zero.</h2>
         </div>
-        <a class="btn" href="mailto:founder@SubtractArchitect.com?subject=Project%20Inquiry">Start a project</a>
+        <a class="btn" href="mailto:Michael@SubtractArchitect.com?subject=Project%20Inquiry">Start a project</a>
       </div></section>
     </div>
   </main>
-  <footer><div class="wrap foot"><span>Subtract Architect Studios · Concord, New Hampshire</span><span>Intelligence by subtraction</span></div></footer>
+  <footer id="contact"><div class="wrap foot">
+    <span>Subtract Architect Studios · Concord, New Hampshire</span>
+    <a class="member" href="https://joaoslist.com" target="_blank" rel="noopener noreferrer">
+      <img src="media/joaos-list-official-member.jpg" alt="João's List official member badge" width="78" height="78">
+      <span>Official member<small>João's List · Portuguese Business Network</small></span>
+    </a>
+    <span><a href="mailto:Michael@SubtractArchitect.com">Michael@SubtractArchitect.com</a> · <a href="https://github.com/michaelchaves-dev" target="_blank" rel="noopener noreferrer">GitHub</a><small>Intelligence by subtraction</small></span>
+  </div></footer>
   <script>
     const search = document.getElementById("repoSearch");
     const filters = [...document.querySelectorAll(".filter")];
