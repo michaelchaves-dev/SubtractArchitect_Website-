@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Systems Library | Subtract Architect Studios</title>
-  <meta name="description" content="The Subtract Architect Studios systems library: 70 repositories across eight system families.">
+  <title>Subtract Architect Studios</title>
+  <meta name="description" content="Subtract Architect Studios helps businesses reduce costs, eliminate unnecessary work, improve operations, and implement practical technology solutions.">
   <meta name="theme-color" content="#0c0c0c">
   <style>
     :root{--bg:#0c0c0c;--ink:#e8e4dc;--muted:#8b8b83;--lime:#c6f000;--line:#2a2a2a;--panel:#11110f;--max:1180px}
@@ -17,7 +17,7 @@
     .mark{display:flex;align-items:center;gap:10px;font-weight:700}
     .dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}
     .nav{display:flex;gap:22px;color:var(--muted)}
-    .hero{padding:100px 0 76px;border-bottom:1px solid var(--line)}
+    .hero{padding:48px 0 64px;border-bottom:1px solid var(--line)}
     .kicker,.idx{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}
     h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:500}
     h1{font-size:clamp(54px,7vw,98px);line-height:.94;letter-spacing:-.035em;margin:22px 0 26px;max-width:11ch}
@@ -53,8 +53,33 @@
     .cta{padding:90px 0}
     .cta-box{border:1px solid var(--line);border-left:3px solid var(--lime);padding:32px;background:var(--panel);display:flex;justify-content:space-between;align-items:center;gap:30px}
     .cta h2{font-size:clamp(30px,4vw,48px);margin:0;max-width:16ch}
-    .btn{display:inline-flex;align-items:center;background:var(--lime);color:#0c0c0c;padding:13px 18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+    .btn{display:inline-flex;align-items:center;background:var(--lime);color:#0c0c0c;padding:13px 18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;border:0;cursor:pointer;font-family:inherit}
     .btn:hover{color:#0c0c0c}
+    .btn.ghost{background:transparent;color:var(--lime);box-shadow:inset 0 0 0 1px var(--lime)}
+    .btn.ghost:hover{color:var(--lime)}
+    .brand-visual{margin:0 0 28px;border:1px solid var(--line);background:#000;display:flex;justify-content:center}
+    .brand-visual img{display:block;width:auto;max-width:100%;height:auto;max-height:min(42vh,420px)}
+    .hero h1{max-width:none;font-size:clamp(34px,5.4vw,64px)}
+    .hero h1 span{display:block}
+    .tagline{margin:-6px 0 22px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(22px,2.5vw,32px);color:var(--lime);font-weight:500}
+    .lede + .lede{margin-top:14px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .solutions{padding:76px 0;border-bottom:1px solid var(--line)}
+    .solutions h2{font-size:clamp(34px,4.3vw,56px);line-height:1;margin:13px 0 28px}
+    .solution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .solution{background:var(--bg);padding:22px}
+    .solution h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:22px;line-height:1.2;margin:0 0 10px}
+    .solution p{margin:0;color:var(--muted);font-size:14px}
+    .inquiry{padding:0 0 90px}
+    .inquiry-box{border:1px solid var(--line);border-left:3px solid var(--lime);padding:32px;background:var(--panel)}
+    .inquiry h2{font-size:clamp(30px,4vw,48px);margin:8px 0 12px;max-width:16ch}
+    .form-note{color:var(--muted);font-size:14px;max-width:68ch}
+    .form-note a{color:var(--lime)}
+    .inquiry-form{display:grid;gap:12px;margin-top:22px;max-width:640px}
+    .inquiry-form label{display:grid;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .inquiry-form input,.inquiry-form select,.inquiry-form textarea{width:100%;background:#10100f;border:1px solid var(--line);color:var(--ink);padding:13px 14px;font:inherit}
+    .inquiry-form textarea{min-height:120px;resize:vertical}
+    .inquiry-form .btn{justify-self:start}
     footer{border-top:1px solid var(--line);padding:30px 0 46px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
     .foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
 
@@ -65,8 +90,9 @@
     .member img{width:78px;height:78px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 1px rgba(198,240,0,.35)}
     .member small,.foot small{display:block;margin-top:6px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
     .foot a{color:var(--ink)}
-    @media(max-width:850px){.nav{display:flex;gap:14px}.nav a:not([href="#contact"]):not([href*="github"]){display:none}.stats,.catalog-nav,.repo-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cta-box{align-items:flex-start;flex-direction:column}}
-    @media(max-width:520px){.stats{grid-template-columns:1fr}}
+    @media(max-width:980px){.solution-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:850px){.nav{display:flex;gap:14px}.nav a:not([href="#contact"]):not([href*="github"]){display:none}.stats,.catalog-nav,.repo-grid,.solution-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cta-box,.inquiry-box{align-items:flex-start}.cta-box{flex-direction:column}.inquiry-box{padding:22px}}
+    @media(max-width:520px){.stats{grid-template-columns:1fr}.hero-actions .btn{width:100%;justify-content:center}}
   </style>
 </head>
 <body>
@@ -77,14 +103,52 @@
   </div></header>
   <main id="top">
     <section class="hero"><div class="wrap">
-      <div class="kicker">SYSTEMS LIBRARY · GITHUB PORTFOLIO</div>
-      <h1>One studio. <em>Many problem spaces.</em></h1>
-      <p class="lede">A live portfolio snapshot spanning AI operating systems, memory, model routing, inference economics, cybersecurity, governance, simulations, mathematical R&D, property and field operations, education, public research and experimental systems. The library intentionally includes production work, prototypes, research labs, demos, governance infrastructure and selected archival lineage.</p>
+      <figure class="brand-visual">
+        <img src="media/sa-brand-intro-poster.jpg" alt="Subtract Architect Studios. Intelligence by subtraction." width="1280" height="720">
+      </figure>
+      <h1><span>Your Business.</span><span>Less Complexity.</span><span>Better Results.</span></h1>
+      <p class="tagline">Intelligence by Subtraction.</p>
+      <p class="lede">Subtract Architect Studios helps businesses reduce costs, eliminate unnecessary work, improve operations, and implement practical technology solutions.</p>
+      <p class="lede">From continuous vendor compliance monitoring and property management to skilled trades, office automation, and AI cost optimization, we build solutions around your business—not the other way around.</p>
+      <div class="hero-actions">
+        <a class="btn" href="mailto:founder@SubtractArchitect.com?subject=Free%20Consultation%20Request">Request a Free Consultation</a>
+        <a class="btn ghost" href="#solutions">Explore Business Solutions</a>
+      </div>
       <div class="stats">
         <div class="stat"><strong>70</strong><span>Repositories</span></div>
         <div class="stat"><strong>8</strong><span>System families</span></div>
         <div class="stat"><strong>32</strong><span>Public repositories</span></div>
         <div class="stat"><strong>38</strong><span>Private / internal</span></div>
+      </div>
+    </div></section>
+    <section class="solutions" id="solutions"><div class="wrap">
+      <div class="idx">Business services</div>
+      <h2>Solutions for Your Business</h2>
+      <div class="solution-grid">
+        <article class="solution">
+          <h3>Compliance Monitoring</h3>
+          <p>Vendor verification, licensing, insurance tracking, regulatory updates, and ongoing monitoring.</p>
+        </article>
+        <article class="solution">
+          <h3>Property Management</h3>
+          <p>Tenant communications, maintenance coordination, vendor management, and administrative assistance.</p>
+        </article>
+        <article class="solution">
+          <h3>Skilled Trades &amp; Field Services</h3>
+          <p>Scheduling, estimates, work orders, project tracking, and customer communications.</p>
+        </article>
+        <article class="solution">
+          <h3>Office &amp; Administrative Automation</h3>
+          <p>Document processing, scheduling, reporting, customer service, and repetitive task automation.</p>
+        </article>
+        <article class="solution">
+          <h3>AI Token &amp; Cost Optimization</h3>
+          <p>Reduce unnecessary AI spending, optimize model routing, eliminate redundant processes, and improve efficiency.</p>
+        </article>
+        <article class="solution">
+          <h3>Custom Business Solutions</h3>
+          <p>Practical software, AI integration, and workflow improvements designed around individual business needs.</p>
+        </article>
       </div>
     </div></section>
     <div class="note"><div class="wrap">Verified against the connected GitHub account on October 1, 2026. Private repositories are listed to show portfolio breadth but are not linked or presented as publicly reviewable. Archived work is explicitly marked. Machine-readable catalog: library.json.</div></div>
@@ -439,6 +503,32 @@
         </div>
         <a class="btn" href="mailto:Michael@SubtractArchitect.com?subject=Project%20Inquiry">Start a project</a>
       </div></section>
+      <section class="inquiry" id="inquiry">
+        <div class="inquiry-box">
+          <div class="idx">Client inquiry</div>
+          <h2>Let's Improve Your Business.</h2>
+          <p class="lede">Tell us what's costing you time, money, or unnecessary work. We'll help identify opportunities for improvement.</p>
+          <p class="form-note">This page has no form server. Submitting opens an email to <a href="mailto:founder@SubtractArchitect.com">founder@SubtractArchitect.com</a> in your mail app, with the fields below already filled in.</p>
+          <form class="inquiry-form" id="inquiryForm" action="mailto:founder@SubtractArchitect.com" method="post" enctype="text/plain">
+            <label>Name<input name="name" type="text" autocomplete="name" required></label>
+            <label>Business Name<input name="business" type="text" autocomplete="organization" required></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label>Service Needed
+              <select name="service" required>
+                <option value="" selected disabled>Select a service</option>
+                <option>Compliance Monitoring</option>
+                <option>Property Management</option>
+                <option>Skilled Trades &amp; Field Services</option>
+                <option>Office &amp; Administrative Automation</option>
+                <option>AI Token &amp; Cost Optimization</option>
+                <option>Custom Business Solutions</option>
+              </select>
+            </label>
+            <label>Message<textarea name="message" required></textarea></label>
+            <button class="btn" type="submit">Email this inquiry</button>
+          </form>
+        </div>
+      </section>
     </div>
   </main>
   <footer id="contact"><div class="wrap foot">
@@ -471,6 +561,20 @@
       empty.style.display = visibleTotal ? "none" : "block";
     }
     search.addEventListener("input", applyFilters);
+    const inquiryForm = document.getElementById("inquiryForm");
+    inquiryForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(inquiryForm);
+      const body = [
+        `Name: ${data.get("name")}`,
+        `Business Name: ${data.get("business")}`,
+        `Email: ${data.get("email")}`,
+        `Service Needed: ${data.get("service")}`,
+        "",
+        String(data.get("message") || "")
+      ].join("\n");
+      window.location.href = `mailto:founder@SubtractArchitect.com?subject=${encodeURIComponent("Client inquiry")}&body=${encodeURIComponent(body)}`;
+    });
     filters.forEach((button) => button.addEventListener("click", () => {
       filters.forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
