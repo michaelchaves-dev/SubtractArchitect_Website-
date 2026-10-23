@@ -15,7 +15,8 @@ This repository is the source Cursor should open. Do not look for a separate mas
 
 - `library.json` is the catalog. Render from it. Do not invent repositories, families, or counts.
 - A public repository has a `url`. A private or archived repository has `"url": null`. **Do not link those.** They are listed only to show portfolio breadth.
-- `index.html` is a self-contained page of the same catalog: search, public/private filter, family jump list. Open it directly. No build step.
+- `index.html` is the studio homepage for software programs.
+- `library/index.html` is the self-contained systems library: search, public/private filter, family jump list. Open it directly. No build step. Property protection is `property-protection/index.html`.
 - Voice: Subtract Architect Studios, Concord, New Hampshire. Dark ground `#0c0c0c`, warm ink `#e8e4dc`, lime `#c6f000`. Line: Intelligence by subtraction.
 - Contact: founder@SubtractArchitect.com
 
