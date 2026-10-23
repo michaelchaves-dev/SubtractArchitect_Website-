@@ -1,6 +1,8 @@
 # Agent notes
 
-Build and extend the Systems Library from `library.json` and `index.html`.
+The homepage is `index.html`: studio software programs, including MarciAi, Horus, bellaOS, and human approval gates.
+
+The systems library is `library/index.html`, built from `library.json`. Property protection is `property-protection/index.html`.
 
 - 70 repositories, 8 families. Counts are derived from the file. If they disagree with a heading, the file wins.
 - Never publish a URL for a repo whose `url` is null.
