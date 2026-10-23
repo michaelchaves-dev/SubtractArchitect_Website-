@@ -102,6 +102,20 @@
     .repo-link a,.crosslink a,.form-note a,.foot a{color:var(--lime)}
     .crosslink{margin:22px 0 0;color:var(--body);max-width:70ch}
     .audience .card h3{font-size:20px}
+    .timeline{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+    .step{margin:0;min-width:0;display:flex;flex-direction:column}
+    .step-rail{position:relative;height:28px;margin:0 0 14px}
+    .step-rail::before{content:"";position:absolute;top:13px;left:0;right:0;height:1px;background:#465400}
+    .step:first-child .step-rail::before{left:8px}
+    .step:last-child .step-rail::before{right:calc(100% - 46px)}
+    .step-no{position:relative;z-index:1;display:inline-grid;place-items:center;min-width:36px;height:28px;padding:0 8px;background:#0c0c0c;color:var(--lime);border:1px solid #465400;font-size:11px;letter-spacing:.14em}
+    .step-body{border:1px solid var(--line);background:var(--panel);padding:22px 18px 24px;margin-right:14px;height:100%}
+    .step:last-child .step-body{margin-right:0}
+    .step-body:hover{border-color:#465400}
+    .step h3{font-size:22px}
+    .step p{margin:0;color:var(--body);font-size:15px;line-height:1.6}
+    .scope{margin:28px 0 0;max-width:74ch;color:var(--muted);font-size:14px;line-height:1.6}
+    .workflow-cta .lead-box h2{max-width:16em}
     .lead{padding:84px 0 96px}
     .lead-box{border:1px solid var(--line);border-left:3px solid var(--lime);background:var(--panel);padding:32px}
     .form-note{color:var(--muted);font-size:14px;line-height:1.6;max-width:68ch;letter-spacing:0;text-transform:none}
@@ -131,6 +145,12 @@
     @media (max-width:980px){
       .hero-grid,.form-row{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr 1fr}
+      .timeline{grid-template-columns:1fr;gap:12px}
+      .step{border:1px solid var(--line);background:var(--panel);padding:22px}
+      .step-rail{height:auto;margin:0 0 14px}
+      .step-rail::before{display:none}
+      .step-body{border:0;background:transparent;padding:0;margin:0;height:auto}
+      .step:hover{border-color:#465400}
     }
     @media (max-width:640px){
       .cards{grid-template-columns:1fr}
@@ -172,6 +192,9 @@
           <nav class="inpage" aria-label="On this page">
             <a href="#problems">Problems</a>
             <a href="#solutions">Solutions</a>
+            <a href="#workflow">How it works</a>
+            <a href="#services">Inspections</a>
+            <a href="#why">Why it matters</a>
             <a href="#technology">Technology</a>
             <a href="#audience">Who it is for</a>
             <a href="#assessment">Request an assessment</a>
@@ -295,9 +318,152 @@
       </div>
     </section>
 
+    <section class="section" id="workflow" aria-labelledby="workflow-title">
+      <div class="wrap">
+        <p class="idx">[03] / How it works</p>
+        <h2 id="workflow-title">Property Protection Made Simple.</h2>
+        <p class="lede">From initial assessment to ongoing preventative maintenance, our approach helps identify concerns before they become expensive problems.</p>
+        <ol class="timeline">
+          <li class="step">
+            <div class="step-rail"><span class="step-no">01</span></div>
+            <div class="step-body">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></div>
+              <h3>Schedule</h3>
+              <p>Request an assessment and provide information about the property.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-rail"><span class="step-no">02</span></div>
+            <div class="step-body">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/><path d="M9 11h4M11 9v4"/></svg></div>
+              <h3>Inspect</h3>
+              <p>Document observable property conditions, potential pest entry points, moisture concerns, and maintenance deficiencies.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-rail"><span class="step-no">03</span></div>
+            <div class="step-body">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+              <h3>Report</h3>
+              <p>Organize inspection findings, photographs, recommendations, and follow-up priorities.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-rail"><span class="step-no">04</span></div>
+            <div class="step-body">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 6.5l3 3L8 19H5v-3l9.5-9.5z"/><path d="M4 20h7"/><path d="M16 4a2.1 2.1 0 0 1 3 3"/></svg></div>
+              <h3>Maintain</h3>
+              <p>Support preventative maintenance planning, vendor coordination, and recurring inspections.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="idx">[04] / Inspection services</p>
+        <h2 id="services-title">Inspection Services.</h2>
+        <p class="lede">Each service records what can be observed on site and turns it into a record the property team can act on.</p>
+        <div class="cards">
+          <article class="card">
+            <p class="num">01</p>
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="13" r="2"/><circle cx="15" cy="10" r="2.2"/><path d="M8 11V7M15 7.8V5M6.2 14.2L4 16M16.6 11.6L19 13"/><path d="M4 19c2-2 4.2-2.2 6.2-.6 1.4 1.1 3.2 1.2 5 .2 1.6-.9 3.4-.6 4.8.6"/></svg></div>
+            <h3>Pest Activity and Entry Point Inspections</h3>
+            <p>Record observable pest activity and the openings, gaps, and conditions that can allow pests into a building, so follow-up starts from what was seen.</p>
+          </article>
+          <article class="card">
+            <p class="num">02</p>
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg></div>
+            <h3>Moisture and Water Intrusion Indicators</h3>
+            <p>Document visible staining, damp materials, and other water-intrusion indicators, with photographs that show where the concern was observed.</p>
+          </article>
+          <article class="card">
+            <p class="num">03</p>
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 5.5l4 4L9 19H5v-4l9.5-9.5z"/><path d="M12 8l4 4"/></svg></div>
+            <h3>Preventative Maintenance Assessments</h3>
+            <p>Review observable maintenance conditions and organize them into priorities a property team can schedule before a failure sets the calendar.</p>
+          </article>
+          <article class="card">
+            <p class="num">04</p>
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/><path d="M3 20h18"/></svg></div>
+            <h3>Exterior and Common Area Observations</h3>
+            <p>Note the condition of exterior surfaces, access points, and shared areas that residents, owners, and vendors use.</p>
+          </article>
+          <article class="card">
+            <p class="num">05</p>
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="12" rx="1"/><circle cx="12" cy="12" r="3"/><path d="M8 6l1-2h6l1 2"/></svg></div>
+            <h3>Digital Inspection Documentation</h3>
+            <p>Assemble findings, photographs, recommendations, and follow-up priorities into a record the property team can keep and share.</p>
+          </article>
+          <article class="card">
+            <p class="num">06</p>
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="8" r="2.2"/><circle cx="17" cy="8" r="2.2"/><path d="M3.5 18c.5-2.2 2-3.4 3.5-3.4S10 15.8 10.5 18M13.5 18c.5-2.2 2-3.4 3.5-3.4s3 1.2 3.5 3.4"/><path d="M9 12h6"/></svg></div>
+            <h3>Maintenance Follow-Up Coordination</h3>
+            <p>Help sequence recommended follow-up, vendor conversations, and recurring inspection dates so open items stay visible.</p>
+          </article>
+        </div>
+        <p class="scope">These visits record observable conditions and organize the follow-up. Engineering evaluations, environmental testing, code inspections, and licensed-trade work stay with the qualified professional for that scope.</p>
+      </div>
+    </section>
+
+    <section class="section" id="why" aria-labelledby="why-title">
+      <div class="wrap">
+        <p class="idx">[05] / Why preventative inspections matter</p>
+        <h2 id="why-title">Why Preventative Inspections Matter.</h2>
+        <p class="lede">A preventative inspection gives a property team an earlier look at conditions and a clearer record of what was found. Results depend on the property, the findings, and the follow-up the owner chooses to complete.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/></svg></div>
+            <h3>Earlier identification of maintenance concerns</h3>
+            <p>Concerns can be written down while they are still observations, which gives the team time to plan a response.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M9 12h6M9 16h4"/></svg></div>
+            <h3>Better property documentation</h3>
+            <p>Photographs and written findings give owners, managers, and vendors a shared record of what was observed.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h10M4 12h16M4 17h10"/><path d="M16 5l2 2-2 2M18 15l2 2-2 2"/></svg></div>
+            <h3>More organized vendor coordination</h3>
+            <p>Recommendations and priorities give service providers a clearer starting point for the work they are asked to do.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><path d="M15 16h3M16.5 14.5v3"/></svg></div>
+            <h3>Reduced administrative friction</h3>
+            <p>One organized record can stand in for scattered notes, forwarded photos, and repeated explanations of the same condition.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h6"/></svg></div>
+            <h3>Improved maintenance planning</h3>
+            <p>Follow-up priorities and recurring visits give the maintenance calendar specific work to schedule.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20V10l4-3 4 3v10"/><path d="M11 20V8l4-3 5 3.5V20"/><path d="M5 20h14"/></svg></div>
+            <h3>Better visibility across property portfolios</h3>
+            <p>The same inspection structure can be repeated across buildings, so a portfolio reads as a set of comparable records.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section workflow-cta" id="inspection-cta" aria-labelledby="inspection-cta-title">
+      <div class="wrap">
+        <div class="lead-box">
+          <p class="idx">[06] / Next step</p>
+          <h2 id="inspection-cta-title">Know What Needs Attention Before It Becomes an Emergency.</h2>
+          <p class="lede">Request an assessment to talk through the property, or review the technology Subtract Architect Studios is developing alongside the inspection service.</p>
+          <div class="lead-actions">
+            <a class="btn" href="#assessment" data-intent="Property assessment">Request a Property Assessment</a>
+            <a class="btn ghost" href="#technology">Explore Property Management Technology</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="technology">
       <div class="wrap">
-        <p class="idx">[03] / Studio technology</p>
+        <p class="idx">[07] / Studio technology</p>
         <h2>Property Experience Meets Intelligent Technology.</h2>
         <p class="lede">Property management involves more than inspecting buildings. It requires communication, scheduling, documentation, vendor coordination, and timely decisions.</p>
         <p class="lede">Subtract Architect Studios is developing integrated tools to help simplify these responsibilities.</p>
@@ -350,7 +516,7 @@
 
     <section class="section audience" id="audience">
       <div class="wrap">
-        <p class="idx">[04] / Who it is for</p>
+        <p class="idx">[08] / Who it is for</p>
         <h2>Designed for Property Owners and Managers.</h2>
         <p class="lede">The same inspection and coordination work can be scoped for a single building or a larger portfolio.</p>
         <div class="cards">
@@ -396,7 +562,7 @@
     <section class="lead" id="assessment">
       <div class="wrap">
         <div class="lead-box">
-          <p class="idx">[05] / Assessment request</p>
+          <p class="idx">[09] / Assessment request</p>
           <h2>Start Protecting Your Property Today.</h2>
           <p class="lede">Whether you manage one building or an entire portfolio, we can help you evaluate inspection needs, maintenance concerns, and opportunities to improve property operations.</p>
           <div class="lead-actions">
