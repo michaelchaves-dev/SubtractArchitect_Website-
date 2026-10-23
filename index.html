@@ -13,10 +13,10 @@
     a{color:inherit;text-decoration:none} a:hover{color:var(--lime)}
     .wrap{width:min(var(--max),90vw);margin:auto}
     .bar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(8,8,8,.94);backdrop-filter:blur(14px)}
-    .barin{width:min(var(--max),94vw);margin:auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+    .barin{width:min(var(--max),94vw);margin:auto;min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
     .mark{display:flex;align-items:center;gap:10px;font-weight:700}
     .dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}
-    .nav{display:flex;gap:22px;color:var(--muted)}
+    .nav{display:flex;flex-wrap:wrap;gap:22px;color:var(--muted)}
     .hero{padding:100px 0 76px;border-bottom:1px solid var(--line)}
     .kicker,.idx{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}
     h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:500}
@@ -28,6 +28,7 @@
     .stat strong{display:block;font-family:Georgia,serif;font-size:42px;font-weight:500;line-height:1;color:var(--lime)}
     .stat span{display:block;margin-top:10px;color:var(--muted);font-size:11px;letter-spacing:.15em;text-transform:uppercase}
     .note{padding:20px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}
+    .service-note a{color:var(--lime);text-decoration:underline;text-underline-offset:.22em}
     .catalog-nav{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:70px 0 15px}
     .catalog-nav a{background:var(--bg);padding:16px 18px;display:flex;gap:14px;align-items:center;color:#b7b4ae;font-size:13px}
     .catalog-nav span{color:var(--lime);font-size:11px;letter-spacing:.12em}
@@ -65,7 +66,7 @@
     .member img{width:78px;height:78px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 1px rgba(198,240,0,.35)}
     .member small,.foot small{display:block;margin-top:6px;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
     .foot a{color:var(--ink)}
-    @media(max-width:850px){.nav{display:flex;gap:14px}.nav a:not([href="#contact"]):not([href*="github"]){display:none}.stats,.catalog-nav,.repo-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cta-box{align-items:flex-start;flex-direction:column}}
+    @media(max-width:850px){.nav{display:flex;gap:14px}.nav a:not([href="#contact"]):not([href*="github"]):not(.keep){display:none}.stats,.catalog-nav,.repo-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cta-box{align-items:flex-start;flex-direction:column}}
     @media(max-width:520px){.stats{grid-template-columns:1fr}}
   </style>
 </head>
@@ -73,7 +74,7 @@
   <header class="bar"><div class="barin">
     <a class="mark" href="#top"><span class="dot"></span> Subtract Architect Studios</a>
     <a href="https://joaoslist.com" target="_blank" rel="noopener noreferrer" title="João's List official member"><img class="seal" src="media/joaos-list-official-member.jpg" alt="João's List official member, Portuguese Business Network" width="36" height="36"></a>
-    <nav class="nav"><a href="#catalog">Families</a><a href="#library">Library</a><a href="https://github.com/michaelchaves-dev" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#contact">Contact</a></nav>
+    <nav class="nav"><a class="keep" href="property-protection/">Property Protection</a><a href="#catalog">Families</a><a href="#library">Library</a><a href="https://github.com/michaelchaves-dev" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#contact">Contact</a></nav>
   </div></header>
   <main id="top">
     <section class="hero"><div class="wrap">
@@ -87,6 +88,7 @@
         <div class="stat"><strong>38</strong><span>Private / internal</span></div>
       </div>
     </div></section>
+    <div class="note service-note"><div class="wrap"><a href="property-protection/">Property protection</a> — inspections, preventative maintenance, and technology-enabled property operations for owners and managers.</div></div>
     <div class="note"><div class="wrap">Verified against the connected GitHub account on October 1, 2026. Private repositories are listed to show portfolio breadth but are not linked or presented as publicly reviewable. Archived work is explicitly marked. Machine-readable catalog: library.json.</div></div>
     <div class="wrap">
       <nav class="catalog-nav" id="catalog"><a href="#core-os-memory-agent-infrastructure"><span>14</span>Core OS, Memory & Agent Infrastructure</a>
