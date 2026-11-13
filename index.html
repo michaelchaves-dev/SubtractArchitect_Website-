@@ -17,15 +17,171 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Subtract Architect Studios — Software That Organizes Your Company’s Everyday Work",
-    "description": "Software that organizes your company’s everyday work — flat, published pricing — no hourly billing, no surprise charges. The Check $249 flat, The Build $997 flat, The System $149/mo flat. Concord, New Hampshire.",
-    "url": "https://www.subtractarchitect.com/",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Subtract Architect Studios",
-      "url": "https://www.subtractarchitect.com/"
-    }
+    "@graph": [
+      {
+        "@id": "https://www.subtractarchitect.com/#website",
+        "@type": "WebSite",
+        "name": "Subtract Architect Studios",
+        "publisher": {
+          "@id": "https://www.subtractarchitect.com/#organization"
+        },
+        "url": "https://www.subtractarchitect.com/"
+      },
+      {
+        "@id": "https://www.subtractarchitect.com/#webpage",
+        "@type": "WebPage",
+        "about": {
+          "@id": "https://www.subtractarchitect.com/#organization"
+        },
+        "description": "Software that organizes your company’s everyday work — flat, published pricing — no hourly billing, no surprise charges. The Check $249 flat, The Build $997 flat, The System $149/mo flat. Concord, New Hampshire.",
+        "isPartOf": {
+          "@id": "https://www.subtractarchitect.com/#website"
+        },
+        "name": "Subtract Architect Studios — Software That Organizes Your Company’s Everyday Work",
+        "url": "https://www.subtractarchitect.com/"
+      },
+      {
+        "@id": "https://www.subtractarchitect.com/#organization",
+        "@type": "Organization",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressLocality": "Concord",
+          "addressRegion": "NH"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Concord, New Hampshire"
+          },
+          {
+            "@type": "City",
+            "name": "Manchester, New Hampshire"
+          },
+          {
+            "@type": "City",
+            "name": "Nashua, New Hampshire"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "areaServed": "US",
+          "availableLanguage": [
+            "en",
+            "es",
+            "pt"
+          ],
+          "contactType": "sales",
+          "email": "Michael@SubtractArchitect.com",
+          "telephone": "+1-617-230-0760"
+        },
+        "description": "Subtract Architect Studios helps property managers and local small businesses in New Hampshire cut waste with AI, websites, and automation.",
+        "email": "Michael@SubtractArchitect.com",
+        "founder": {
+          "@id": "https://www.subtractarchitect.com/#michael-f-chaves"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "The Check — a focused review with a written report"
+              },
+              "name": "The Check",
+              "price": "249",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "The Build — one system, designed for your business and handed over working"
+              },
+              "name": "The Build",
+              "price": "997",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "The System — hosting, support, and updates"
+              },
+              "name": "The System",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "billingDuration": "P1M",
+                "price": "149",
+                "priceCurrency": "USD",
+                "unitText": "MONTH"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Reception Supervisor — a reception service configured to your specifications, and supervised on your behalf"
+              },
+              "name": "AI Reception Supervisor",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "billingDuration": "P1M",
+                "price": "199",
+                "priceCurrency": "USD",
+                "unitText": "MONTH"
+              }
+            }
+          ],
+          "name": "Subtract Architect Studios services"
+        },
+        "name": "Subtract Architect Studios",
+        "sameAs": [
+          "https://www.instagram.com/subtract_architect",
+          "https://www.youtube.com/@subtractarchitectstudios",
+          "https://x.com/SubtrctArchitect",
+          "https://www.skool.com/ai-token-cost-security-6820/about"
+        ],
+        "slogan": "Intelligence by Subtraction",
+        "telephone": "+1-617-230-0760",
+        "url": "https://www.subtractarchitect.com/"
+      },
+      {
+        "@id": "https://www.subtractarchitect.com/#michael-f-chaves",
+        "@type": "Person",
+        "additionalName": "F.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressLocality": "Concord",
+          "addressRegion": "NH"
+        },
+        "email": "Michael@SubtractArchitect.com",
+        "familyName": "Chaves",
+        "givenName": "Michael",
+        "jobTitle": "Founder",
+        "knowsAbout": [
+          "Property management operations",
+          "AI cost and token optimization",
+          "Websites and automation for local small businesses",
+          "AI training, evaluation, and data annotation"
+        ],
+        "name": "Michael F. Chaves",
+        "sameAs": [
+          "https://github.com/michaelchaves-dev",
+          "https://www.instagram.com/bigmikech",
+          "https://www.facebook.com/mfchaves",
+          "https://substack.com/@michaelchaves",
+          "https://michael-chaves-portfolio.vercel.app/investor"
+        ],
+        "telephone": "+1-617-230-0760",
+        "url": "https://www.subtractarchitect.com/",
+        "worksFor": {
+          "@id": "https://www.subtractarchitect.com/#organization"
+        }
+      }
+    ]
   }
   </script>
   <style>
